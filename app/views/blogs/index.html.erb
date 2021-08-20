@@ -1,0 +1,20 @@
+<div class="col-md-8 blog-main">
+  <h3 class="pb-3 mb-4 font-italic border-bottom">
+    From my Head
+  </h3>
+
+  <h4>
+    <%= link_to 'Write a new Post', new_blog_path if logged_in?(:site_admin) %>
+  </h4>
+
+  <br>
+
+  <%= render @blogs %>
+
+  <nav class="blog-pagination">
+    <%= paginate @blogs %>
+  </nav>
+
+</div><!-- /.blog-main -->
+
+

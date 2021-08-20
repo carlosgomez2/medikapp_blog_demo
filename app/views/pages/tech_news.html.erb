@@ -1,0 +1,18 @@
+<main role="main" class="inner cover">
+  <h2 class="cover-heading">Rails News</h2>
+  
+  <hr>
+
+  <div class="row">
+    <% @tweets.each do |tweet| %>
+      <div class="col-md-4 tech-news">
+        <div class="card border-light mb-3" style="max-width: 18rem;">
+          <div class="card-header"><%= fa_icon "twitter", text: "Tweet" %></div>
+          <div class="card-body">
+            <p class="card-text"><%= tweeter_parser(tweet) %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <%= render 'shared/meta_layouts' %>
+    
+    <title><%= @page_title %></title>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <%= render 'shared/portfolio_nav' %>
+
+    <%= source_helper %>
+
+    <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+
+    <%= yield %>
+
+    <%= render 'shared/portfolio_footer' %>
+
+    <%= alerts %>
+
+  </body>
+
+</html>

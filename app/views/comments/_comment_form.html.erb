@@ -1,0 +1,11 @@
+<% unless current_user.is_a? GuestUser %>
+  <%= form_for @comment, url: '#' do |f| %>
+    <div class="form-group">
+      <h5>Leave a Comment:</h5>
+      <%# f.label :content %>
+      <%= f.text_area :content, class: 'form-control', placeholder: 'Your comment here...' %>
+    </div>
+
+    <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
